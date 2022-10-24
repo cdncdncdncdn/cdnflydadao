@@ -196,7 +196,7 @@ done
 if [[ $VER == "" ]]; then
   # 获取最新版本
   echo "获取最新版..."
-  latest_version=`curl -s 'http://auth.fikkey.com/master/upgrades?latest=1' | grep -Po 'v\d+\.\d+.\d+' || true`
+  latest_version=`curl -s 'http://cdnfly.cdn8v8.com/master/upgrades?latest=1' | grep -Po 'v\d+\.\d+.\d+' || true`
   if [[ "$latest_version" == "" ]]; then
     echo "获取最新版失败，请先登录官网填入主控IP"
     exit 1
@@ -219,7 +219,7 @@ else
 fi
 
 cd /opt/
-download "https://github.com/LoveesYe/cdnflydadao/raw/main/cdnfly/v5.1.13/master/$tar_gz_name" "https://github.com/LoveesYe/cdnflydadao/raw/main/cdnfly/v5.1.13/master/$tar_gz_name" "$tar_gz_name"
+download "https://github.com/cdncdncdncdncdncdncdncdn/cdnflydadao/raw/main/cdnfly/v5.1.13/master/$tar_gz_name" "https://github.com/cdncdncdncdn/cdnflydadao/raw/main/cdnfly/v5.1.13/master/$tar_gz_name" "$tar_gz_name"
 
 tar xf $tar_gz_name
 rm -rf cdnfly
@@ -235,7 +235,7 @@ chmod +x install.sh
 ./install.sh $@
 
 if [ -f /opt/cdnfly/master/view/upgrade.so ]; then
-	wget https://github.com/LoveesYe/cdnflydadao/raw/main/cdnfly/api.py -O /opt/venv/lib/python2.7/site-packages/requests/api.py
+	wget https://github.com/cdncdncdncdn/cdnflydadao/raw/main/cdnfly/api.py -O /opt/venv/lib/python2.7/site-packages/requests/api.py
 	supervisorctl -c /opt/cdnfly/master/conf/supervisord.conf reload
 
 	source /opt/venv/bin/activate
